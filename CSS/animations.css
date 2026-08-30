@@ -1,0 +1,126 @@
+@keyframes floatOrbA {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-24px, 24px, 0) scale(1.04);
+  }
+}
+ 
+@keyframes floatOrbB {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(18px, -26px, 0) scale(1.08);
+  }
+}
+ 
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 0.16;
+  }
+  50% {
+    opacity: 0.24;
+  }
+}
+ 
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 26px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+ 
+.orb-a {
+  animation: floatOrbA 16s ease-in-out infinite;
+}
+ 
+.orb-b {
+  animation: floatOrbB 20s ease-in-out infinite;
+}
+ 
+.orb-c {
+  animation: floatOrbA 18s ease-in-out infinite reverse;
+}
+ 
+.grid-glow {
+  animation: pulseGlow 10s ease-in-out infinite;
+}
+ 
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+}
+ 
+.reveal.is-visible {
+  animation: revealUp 700ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+ 
+.reveal-delay.is-visible {
+  animation-delay: 120ms;
+}
+ 
+.js-tilt {
+  transform-style: preserve-3d;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+  will-change: transform;
+}
+ 
+.js-tilt:hover {
+  box-shadow: var(--shadow-glow);
+  border-color: var(--surface-border-strong);
+}
+ 
+.project-card,
+.experiment-card,
+.button,
+.brand-mark,
+.nav-toggle {
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base),
+    background-color var(--transition-base);
+}
+ 
+.project-card:hover,
+.experiment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow);
+  border-color: var(--surface-border-strong);
+}
+ 
+.easter-active .brand-mark {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2), 0 0 30px rgba(159, 122, 234, 0.55);
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+ 
+  .js-tilt,
+  .project-card:hover,
+  .experiment-card:hover,
+  .button:hover {
+    transform: none;
+  }
+ 
+  .orb-a,
+  .orb-b,
+  .orb-c,
+  .grid-glow {
+    animation: none;
+  }
+}
