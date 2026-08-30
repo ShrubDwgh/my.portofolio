@@ -1,0 +1,169 @@
+@media (max-width: 1023px) {
+  .hero-grid,
+  .about-grid,
+  .featured-project,
+  .contact-panel,
+  .modal-project__hero {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-actions {
+    justify-content: flex-start;
+  }
+
+  .featured-project__media {
+    order: -1;
+  }
+}
+
+@media (max-width: 860px) {
+  .site-header {
+    padding-top: 12px;
+  }
+
+  .navbar {
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .nav-toggle {
+    display: grid;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    right: 0;
+    display: grid;
+    gap: 8px;
+    padding: 14px;
+    border-radius: 24px;
+    background: rgba(6, 12, 24, 0.94);
+    border: 1px solid var(--surface-border);
+    box-shadow: var(--shadow-soft);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition:
+      opacity var(--transition-base),
+      visibility var(--transition-base),
+      transform var(--transition-base);
+  }
+
+  .nav-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-menu--static {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .nav-link {
+    padding: 14px 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 88px 0;
+  }
+
+  .hero {
+    padding-top: 122px;
+    padding-bottom: 82px;
+  }
+
+  .profile-card,
+  .contact-panel,
+  .modal__dialog,
+  .project-page {
+    padding: 20px;
+  }
+
+  .about-highlights,
+  .skills-grid,
+  .projects-grid,
+  .experiments-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions,
+  .project-card__actions,
+  .contact-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .contact-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 540px) {
+  .navbar {
+    padding: 12px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .brand-mark {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand-text strong {
+    font-size: 0.96rem;
+  }
+
+  .brand-text small {
+    font-size: 0.76rem;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.7rem, 16vw, 3.7rem);
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .modal {
+    padding: 12px;
+  }
+
+  .modal__dialog {
+    max-height: 90vh;
+  }
+}
+
+@media (max-height: 680px) and (orientation: landscape) {
+  .hero,
+  .section {
+    padding-top: 74px;
+    padding-bottom: 74px;
+  }
+}
